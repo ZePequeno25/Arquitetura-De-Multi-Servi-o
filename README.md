@@ -99,48 +99,48 @@ nodejs-microservices/
    - `CREATE DATABASE pedido_db;`
    - `CREATE DATABASE produto_db;`
 
-3. **Configure os .env** em cada serviço (substitua `ifsp`):
+2. **Configure os .env** em cada serviço (substitua `ifsp`):
    - cliente-service/.env:
-     
+  
      DB_NAME=cliente_db
-     
+  
      DB_USER=root
-     
+  
      DB_PASS=ifsp
-     
+  
      DB_HOST=localhost
-     
+  
      PORT=3001
 
    - pedido-service/.env (adicione URL do cliente e produto se integrado):
 
      DB_NAME=pedido_db
-     
+  
      DB_USER=root
-     
+  
      DB_PASS=ifsp
-     
+  
      DB_HOST=localhost
-     
+  
      CLIENTE_SERVICE_URL=<http://localhost:3001/clientes>
-     
+  
      PRODUTO_SERVICE_URL=<http://localhost:3003/produtos>  // Se integrado
-     
+  
      PORT=3002
 
    - produto-service/.env:
-     
+  
      DB_NAME=produto_db
-   
+  
      DB_USER=root
-   
+  
      DB_PASS=ifsp
-   
+  
      DB_HOST=localhost
-   
+
      PORT=3003
 
-5. **Instale dependências e rode os serviços**:
+3. **Instale dependências e rode os serviços**:
 
 - Use o script `start-all.sh` (ou `start-all.js`) na raiz:
 - Primeiro, instale `concurrently` global: `npm install -g concurrently`
@@ -224,5 +224,3 @@ Use Postman ou curl para testar. Todos endpoints são RESTful e usam JSON.
 - O pedido valida o cliente (e produtos, se configurado) antes de salvar.
 - Erros: Retorna JSON com mensagem (ex: 404 para não encontrado).
 - Expanda adicionando mais serviços ou integrações.
-
-
