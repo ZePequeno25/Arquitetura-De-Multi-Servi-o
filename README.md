@@ -142,9 +142,9 @@ nodejs-microservices/
 
 3. **Instale dependências e rode os serviços**:
 
-- Use o script `start-all.sh` (ou `start-all.js`) na raiz:
+- Use o script `start-all.js` na raiz:
 - Primeiro, instale `concurrently` global: `npm install -g concurrently`
-- Rode: `bash start-all.sh` (ou `node start-all.js` para a versão JS).
+- Rode: `node start-all.js` para a versão JS).
 - Isso instala npm em cada pasta e inicia todos os serviços de uma vez (portas 3001, 3002, 3003).
 
 Se preferir manual:
@@ -224,3 +224,4 @@ Use Postman ou curl para testar. Todos endpoints são RESTful e usam JSON.
 - O pedido valida o cliente (e produtos, se configurado) antes de salvar.
 - Erros: Retorna JSON com mensagem (ex: 404 para não encontrado).
 - Expanda adicionando mais serviços ou integrações.
+
